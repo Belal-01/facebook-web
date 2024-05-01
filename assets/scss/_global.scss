@@ -1,0 +1,99 @@
+@function rem($value){
+  $remValue :$value;
+  @if (type-of($value)==number){
+    $remValue: ($value/16) + rem;
+  }
+  @return $remValue;
+}
+
+$primary-font :Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+$primary-background:#c7c6c6;
+$icon-color:#656565;
+$icon-background-color:#e4e4e4;
+$active-color:#1b75e5;
+
+$primary-padding:rem(10);
+$sidebar-width:rem(300);
+$feed-width:rem(550);
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:0;
+}
+body{
+  background-color:$primary-background;
+  font-family: $primary-font;
+  &::before{
+    content:"";
+    display: block;
+    height:rem(70);
+   
+  }
+}
+
+
+@mixin flex($justifiy:center,$align:center,$gap:10){
+  display: flex;
+  justify-content:$justifiy;
+  align-items:$align;
+  gap: rem($gap);
+}
+@mixin rounded-box($size,$bg-color){
+  border:none;
+  padding:rem($size/2);
+  border-radius: rem($size/2);
+  height:rem($size);
+  background-color:$bg-color;
+}
+@mixin img-rounded($size){
+  width: rem($size);
+  height:rem($size);
+  border-radius: 50%;
+  object-fit:cover;
+}
+@mixin circle($size){
+  width:rem($size);
+  height:rem($size);
+  border-radius: 50%;
+  
+}
+@mixin seprate-line(){
+  content: "";
+  display: block;
+  width:90%;
+  height:rem(1);
+  margin:rem(5) auto;
+  background-color: rgb(39, 37, 37);
+}
+@mixin component-box($margin,$padding,$radius){
+  margin:rem($margin) auto;
+  padding:rem($padding);
+  width:95%;
+  border-radius:rem($radius);
+  box-shadow:1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+%contetn-component{
+  @include flex(left,center);
+  column-gap: 30px;
+  font-size: rem(18);
+  font-weight: 500;
+  padding:rem(5) 0;
+}
+@function random-rgb(){
+  @return rgb(random(255),random(255),random(255));
+}
+.input-box{
+  &__text{
+    label{
+      width:100%;      
+    }
+    input{
+     @include rounded-box(40,#efefef);
+     width:inherit;
+     font-size: rem(20);
+    
+    }
+  }
+}

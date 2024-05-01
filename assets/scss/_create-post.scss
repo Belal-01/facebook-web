@@ -1,0 +1,32 @@
+.creat-post{
+  @include component-box(20,10,10);
+  background-color: white;
+  
+.input-box__text{
+  @include flex(left,center);
+    img{
+      @include img-rounded(40);
+    }     
+ }
+
+ &__buttons{
+  @include flex(center,center,0);
+  border-top :1px solid rgb(133, 128, 128);
+  margin-top :rem(8);
+  &--button{
+    @include flex(space-between,center);
+    padding:rem(10) rem(20);
+    span{
+      color:gray;
+    }
+    $steps :( 1,2,3,4,5,6,7,8,9);
+    @each $step in $steps{
+      &:nth-child(#{$step}) i {
+        color:random-rgb();  
+        font-size:rem(25);
+      }
+    }
+   
+  }
+ }
+}

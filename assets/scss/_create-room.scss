@@ -1,0 +1,29 @@
+.create-room{
+  @include flex(space-between,center);
+  @include component-box(20,10,10);
+  background-color: white;
+  &__button{
+  @include flex(space-between,center);
+   padding:rem(6) rem(15);
+   border-radius: rem(25);
+   border:1px solid gray;
+   @for $i from 1 through 10{
+    &:nth-child(#{$i}) i{
+      color:random-rgb();
+      font-size: rem(20);
+     }
+   }
+
+   span{
+    color:gray;
+    font-weight: 500;
+    font-size: rem(18);
+   }
+   
+  }
+  &__contacts{
+    img{
+      @include img-rounded(40);
+    }
+  }
+}

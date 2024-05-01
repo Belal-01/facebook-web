@@ -1,0 +1,36 @@
+.page-content{
+
+ @include flex(space-between,top,10);
+  padding:$primary-padding;
+  &__left,&__right{
+    .wrapper{
+      position:sticky;
+      top:rem(70);
+      z-index:0;
+  
+    }
+  }
+ 
+
+  &__left{
+    flex:30% 0 0;
+    max-width:$sidebar-width;
+    padding:$primary-padding;
+    
+  }
+  &__middle{
+    flex:40% 0 0;
+
+    max-width:$feed-width;
+    
+  }
+   &__right{
+    flex:30% 0 0;
+    max-width:$sidebar-width;
+  
+    
+  }
+
+
+
+}

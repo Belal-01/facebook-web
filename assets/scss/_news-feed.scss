@@ -1,0 +1,75 @@
+.news-feed{
+  @include component-box(20,10,10);
+  background-color: white;
+  &__header{   
+    @include flex(left ,center);
+    &__img{         
+      img{
+        @include img-rounded(40);      
+      }
+    }
+    &__post-meta{
+     flex:1;     
+     &__name{
+      font-size:rem(18);
+      font-weight: 600;
+     }
+     &__info{
+      @include flex(left,center,5);
+      .date{
+        color:gray;
+        font-size: rem(13);
+      }
+     }
+    }
+    &__options{           
+      font-size:rem(25);
+      font-weight: bold; 
+      position: relative;
+      top:-10px;
+      line-height: 0;     
+    }   
+  }
+  &__feed{
+  p,img{
+    margin-top:rem(10);
+  }
+  p{
+    color:rgb(107, 103, 103);  
+  }
+  img{
+    border-radius: rem(5);
+  }
+  }
+  &__footer{
+  @include flex(space-between,center);
+  padding: rem(10) rem(10) 0 rem(10) ;
+  &--reactions{
+    font-size: rem(20);
+    $steps :( 1,2,3,4);
+    @each $step in $steps{
+      i:nth-child(#{$step}){
+        color:random-rgb();  
+        
+      }
+    }
+  }
+  &--comments{
+    color:gray;
+  }
+  }
+  &__comment{
+    .input-box__text{
+      @include flex(space-between,center);
+      margin-top:rem(10);
+      img{
+        @include img-rounded(30);
+      }
+      input{
+        @include rounded-box(30,#efefef);
+        font-size:rem(16);
+      }
+    }
+   
+  }
+}

@@ -1,0 +1,72 @@
+//////// start sponser ////////
+.sponsore-section-title{
+  color:rgb(94, 91, 91);
+  padding:rem(5) rem(0) 0 rem(15);
+}
+.sponsore{
+ @include flex(left,top,10);
+ padding: $primary-padding;
+
+ &-img{
+  img{
+    @include img-rounded(40);
+  }
+ }
+ &-info{
+  width:75%;
+  h1{
+    font-weight:600;
+    font-size:rem(20);
+  }
+  p{
+    color:gray;
+    font-size: rem(14);
+    padding:rem(5) 0;
+  }
+  &__img{
+    img{
+      width:100%;
+      height:rem(100);
+      border-radius: rem(10);
+    }
+  }
+ }
+
+}
+////////// end sponser  ////////////
+.seperate-line{
+  @include seprate-line();
+}
+
+
+/////////////   start pages ////////////
+.pages-title{
+  margin:rem(10);
+  margin-left:rem(16);
+}
+.facebook-pages{
+  &__page{
+    @extend %contetn-component;
+    img{
+      @include img-rounded(40);
+    }
+
+  }
+}
+////////////  end pages //////////
+
+/////////// start contacts /////////
+.contacts-title{
+  margin:rem(10);
+  margin-left:rem(16);
+}
+.facebook-contacts{
+  &__contact{
+    @extend %contetn-component;
+    img{
+      @include img-rounded(40);
+    }
+
+  }
+}
+//////////   end contacts //////////////

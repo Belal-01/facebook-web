@@ -1,0 +1,33 @@
+
+.facebook-shortcuts{
+ &__shortcut{
+  @extend %contetn-component;
+  padding:rem(10) 0 ;
+ 
+  i{
+    color:$active-color;
+    font-size: rem(25);
+  }
+  
+ }
+ &::after{
+  @include seprate-line();
+ }
+
+}
+
+.shortcuts-title{
+  margin:rem(10);
+  margin-left:rem(16);
+
+}
+
+.facebook-favorites{
+  &__favorite{
+  @extend %contetn-component;
+  padding:rem(10) 0;
+    img{
+      @include img-rounded(40);
+    }
+  }
+}

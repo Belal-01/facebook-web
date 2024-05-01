@@ -1,0 +1,63 @@
+
+.nav{
+ @include flex(space-between,center);
+  background-color: white;
+  box-shadow: 0px 3px 5px rgb(0, 0, 0);
+  position:fixed;
+  top:0px;
+  left:0;
+  right:0;
+  z-index: 999;
+   &__left{
+    flex:30% 0 0;
+    max-width: $sidebar-width;    
+    padding:rem(10);
+   } 
+   &__middle{
+    flex:40% 0 0;
+    max-width: $feed-width;
+    
+
+   } 
+   &__right{
+    flex:30% 0 0;
+    max-width: $sidebar-width;
+
+   }
+   
+   .input-box{
+    &__text{
+      @include flex(space-between,center,10);     
+      svg{
+        color:rgb(26, 98, 255);
+      }
+
+    }
+   }
+   .facebook-icons{
+    @include flex(space-around,center);
+    font-size: rem(30);
+    color:$icon-color;
+    .active{
+      color:$active-color;
+      
+    }
+   }
+
+   .facebook-services{
+    @include flex(space-around,center,10);
+    &__service{
+      @include flex(center,center);
+      @include circle(40);
+      background-color: $icon-background-color;
+      font-size: rem(20);
+    }
+    .profile-img{
+        @include img-rounded(40);
+        
+         
+        }
+   }
+
+
+}
